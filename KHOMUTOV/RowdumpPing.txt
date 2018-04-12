@@ -1,0 +1,4 @@
+10:54:25.593414 arp who-has zpc23.stu.neva.ru tell gpu4-gw.neva.ru
+10:54:25.785417 arp who-has zpc22.stu.neva.ru tell gpu4-gw.neva.ru
+10:54:26.030942 802.1d unknown version
+10:54:26.205701 

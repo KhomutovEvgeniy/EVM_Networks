@@ -1,0 +1,76 @@
+11:14:01.549941 IP ZPC15.stu.neva.ru.53011 > 239.255.255.250.1900: UDP, length 174
+11:14:02.207937 IP ZPC15.stu.neva.ru.55151 > ns.neva.ru.53:  43723+ PTR? 250.255.255.239.in-addr.arpa. (46)
+11:14:02.378141 IP ns.neva.ru.53 > ZPC15.stu.neva.ru.55151:  43723 NXDomain 0/1/0 (103)
+11:14:02.378431 IP ZPC15.stu.neva.ru.54788 > 224.0.0.252.5355: UDP, length 46
+11:14:02.485304 IP ZPC15.stu.neva.ru.54788 > 224.0.0.252.5355: UDP, length 46
+11:14:02.563337 IP ZPC15.stu.neva.ru.53011 > 239.255.255.250.1900: UDP, length 174
+11:14:02.688368 IP ZPC15.stu.neva.ru.137 > 239.255.255.250.137: UDP, length 50
+11:14:02.689155 arp who-has ZPC15.stu.neva.ru (08:2b:06:01:02:01 (oui Unknown)) tell zpc20.stu.neva.ru
+11:14:02.689163 arp reply ZPC15.stu.neva.ru is-at 10:78:d2:cb:a8:c7 (oui Unknown)
+11:14:02.689191 IP zpc20.stu.neva.ru.137 > ZPC15.stu.neva.ru.137: UDP, length 121
+11:14:03.047042 IP ZPC15.stu.neva.ru.1900 > 239.255.255.250.1900: UDP, length 502
+11:14:03.047203 IP ZPC15.stu.neva.ru.1900 > 239.255.255.250.1900: UDP, length 445
+11:14:03.047330 IP ZPC15.stu.neva.ru.1900 > 239.255.255.250.1900: UDP, length 436
+11:14:03.047415 IP ZPC15.stu.neva.ru.1900 > 239.255.255.250.1900: UDP, length 516
+11:14:03.047528 IP ZPC15.stu.neva.ru.1900 > 239.255.255.250.1900: UDP, length 500
+11:14:03.047635 IP ZPC15.stu.neva.ru.1900 > 239.255.255.250.1900: UDP, length 488
+11:14:03.450993 IP ZPC15.stu.neva.ru > web.rtc.ru: ICMP echo request, id 1, seq 98, length 72
+11:14:03.451233 IP gpu4-gw.neva.ru > ZPC15.stu.neva.ru: ICMP time exceeded in-transit, length 100
+11:14:03.451399 IP ZPC15.stu.neva.ru > web.rtc.ru: ICMP echo request, id 1, seq 99, length 72
+11:14:03.451642 IP gpu4-gw.neva.ru > ZPC15.stu.neva.ru: ICMP time exceeded in-transit, length 100
+11:14:03.451767 IP ZPC15.stu.neva.ru > web.rtc.ru: ICMP echo request, id 1, seq 100, length 72
+11:14:03.452011 IP gpu4-gw.neva.ru > ZPC15.stu.neva.ru: ICMP time exceeded in-transit, length 100
+11:14:03.578307 IP ZPC15.stu.neva.ru.53011 > 239.255.255.250.1900: UDP, length 174
+11:14:04.202251 IP ZPC15.stu.neva.ru.137 > 239.255.255.250.137: UDP, length 50
+11:14:04.203037 IP zpc20.stu.neva.ru.137 > ZPC15.stu.neva.ru.137: UDP, length 121
+11:14:04.453019 IP ZPC15.stu.neva.ru > web.rtc.ru: ICMP echo request, id 1, seq 101, length 72
+11:14:04.453541 IP rtc-gw3.neva.ru > ZPC15.stu.neva.ru: ICMP time exceeded in-transit, length 100
+11:14:04.453903 IP ZPC15.stu.neva.ru > web.rtc.ru: ICMP echo request, id 1, seq 102, length 72
+11:14:04.454389 IP rtc-gw3.neva.ru > ZPC15.stu.neva.ru: ICMP time exceeded in-transit, length 100
+11:14:04.454669 IP ZPC15.stu.neva.ru > web.rtc.ru: ICMP echo request, id 1, seq 103, length 72
+11:14:04.455137 IP rtc-gw3.neva.ru > ZPC15.stu.neva.ru: ICMP time exceeded in-transit, length 100
+11:14:04.593257 IP ZPC15.stu.neva.ru.53011 > 239.255.255.250.1900: UDP, length 174
+11:14:05.468016 IP ZPC15.stu.neva.ru > web.rtc.ru: ICMP echo request, id 1, seq 104, length 72
+11:14:05.468918 IP 212.116.124.237 > ZPC15.stu.neva.ru: ICMP time exceeded in-transit, length 36
+11:14:05.469393 IP ZPC15.stu.neva.ru > web.rtc.ru: ICMP echo request, id 1, seq 105, length 72
+11:14:05.470295 IP 212.116.124.237 > ZPC15.stu.neva.ru: ICMP time exceeded in-transit, length 36
+11:14:05.470596 IP ZPC15.stu.neva.ru > web.rtc.ru: ICMP echo request, id 1, seq 106, length 72
+11:14:05.471544 IP 212.116.124.237 > ZPC15.stu.neva.ru: ICMP time exceeded in-transit, length 36
+11:14:05.472031 IP ZPC15.stu.neva.ru.54306 > ns.neva.ru.53:  37760+ PTR? 237.124.116.212.in-addr.arpa. (46)
+11:14:05.472555 IP ns.neva.ru.53 > ZPC15.stu.neva.ru.54306:  37760 NXDomain 0/1/0 (114)
+11:14:05.472838 IP ZPC15.stu.neva.ru.137 > 212.116.124.237.137: UDP, length 50
+11:14:05.474014 IP 212.116.124.237 > ZPC15.stu.neva.ru: ICMP 212.116.124.237 udp port 137 unreachable, length 36
+11:14:05.717414 IP ZPC15.stu.neva.ru.137 > 239.255.255.250.137: UDP, length 50
+11:14:05.718199 IP zpc20.stu.neva.ru.137 > ZPC15.stu.neva.ru.137: UDP, length 121
+11:14:06.060680 IP ZPC15.stu.neva.ru.1900 > 239.255.255.250.1900: UDP, length 502
+11:14:06.060797 IP ZPC15.stu.neva.ru.1900 > 239.255.255.250.1900: UDP, length 445
+11:14:06.060884 IP ZPC15.stu.neva.ru.1900 > 239.255.255.250.1900: UDP, length 488
+11:14:06.060997 IP ZPC15.stu.neva.ru.1900 > 239.255.255.250.1900: UDP, length 516
+11:14:06.061081 IP ZPC15.stu.neva.ru.1900 > 239.255.255.250.1900: UDP, length 436
+11:14:06.061174 IP ZPC15.stu.neva.ru.1900 > 239.255.255.250.1900: UDP, length 500
+11:14:06.981963 IP ZPC15.stu.neva.ru.137 > 212.116.124.237.137: UDP, length 50
+11:14:06.986216 IP 212.116.124.237 > ZPC15.stu.neva.ru: ICMP 212.116.124.237 udp port 137 unreachable, length 36
+11:14:07.200354 arp who-has gpu4-gw.neva.ru (00:1e:67:9d:bc:aa (oui Unknown)) tell ZPC15.stu.neva.ru
+11:14:07.200537 arp reply gpu4-gw.neva.ru is-at 00:1e:67:9d:bc:aa (oui Unknown)
+11:14:07.564924 arp who-has ZPC15.stu.neva.ru tell gpu4-gw.neva.ru
+11:14:07.564934 arp reply ZPC15.stu.neva.ru is-at 10:78:d2:cb:a8:c7 (oui Unknown)
+11:14:08.233450 IP ZPC15.stu.neva.ru.137 > 224.0.0.252.137: UDP, length 50
+11:14:08.234220 IP zpc20.stu.neva.ru.137 > ZPC15.stu.neva.ru.137: UDP, length 121
+11:14:08.483547 IP ZPC15.stu.neva.ru.137 > 212.116.124.237.137: UDP, length 50
+11:14:08.484671 IP 212.116.124.237 > ZPC15.stu.neva.ru: ICMP 212.116.124.237 udp port 137 unreachable, length 36
+11:14:08.544670 IP 83.149.246.45.80 > ZPC15.stu.neva.ru.49941: R 1649211768:1649211768(0) ack 1914264603 win 0
+11:14:08.544671 IP 83.149.246.45.80 > ZPC15.stu.neva.ru.49939: R 681429542:681429542(0) ack 3010917440 win 0
+11:14:08.544826 IP 83.149.246.45.80 > ZPC15.stu.neva.ru.49937: R 2665772573:2665772573(0) ack 3820342151 win 0
+11:14:08.544826 IP 83.149.246.45.80 > ZPC15.stu.neva.ru.49940: R 472434954:472434954(0) ack 3534187853 win 0
+11:14:08.544827 IP 83.149.246.45.80 > ZPC15.stu.neva.ru.49942: R 2257188883:2257188883(0) ack 2765606914 win 0
+11:14:08.544827 IP 83.149.246.45.80 > ZPC15.stu.neva.ru.49938: R 1619423032:1619423032(0) ack 2646624516 win 0
+11:14:09.060823 IP ZPC15.stu.neva.ru.1900 > 239.255.255.250.1900: UDP, length 445
+11:14:09.060956 IP ZPC15.stu.neva.ru.1900 > 239.255.255.250.1900: UDP, length 500
+11:14:09.061064 IP ZPC15.stu.neva.ru.1900 > 239.255.255.250.1900: UDP, length 516
+11:14:09.061206 IP ZPC15.stu.neva.ru.1900 > 239.255.255.250.1900: UDP, length 488
+11:14:09.061295 IP ZPC15.stu.neva.ru.1900 > 239.255.255.250.1900: UDP, length 436
+11:14:09.061419 IP ZPC15.stu.neva.ru.1900 > 239.255.255.250.1900: UDP, length 502
+11:14:09.748125 IP ZPC15.stu.neva.ru.137 > 224.0.0.252.137: UDP, length 50
+11:14:09.748892 IP zpc20.stu.neva.ru.137 > ZPC15.stu.neva.ru.137: UDP, length 121
+11:14:11.012902 IP ZPC15.stu.neva.ru > web.rtc.ru: ICMP echo request, id 1, seq 107, length 72
+11:14:11.014708 IP 

@@ -1,0 +1,5 @@
+11:12:59.645043 IP ZPC15.stu.neva.ru.137 > 195.208.117.31.137: UDP, length 50
+11:13:00.394857 IP ZPC15.stu.neva.ru.137 > 195.208.117.31.137: UDP, length 50
+11:13:00.402060 IP ZPC15.stu.neva.ru.58479 > ns.stu.neva.ru.53:  23126+ PTR? 31.117.208.195.in-addr.arpa. (45)
+11:13:00.402697 IP ns.stu.neva.ru.53 > ZPC15.stu.neva.ru.58479:  23126 NXDomain* 0/1/0 (130)
+11:13:00.402976 IP 

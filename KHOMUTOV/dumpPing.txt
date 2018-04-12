@@ -1,0 +1,12 @@
+11:13:33.991190 IP ZPC15.stu.neva.ru.137 > 195.208.117.31.137: UDP, length 50
+11:13:34.739753 IP ZPC15.stu.neva.ru.137 > 195.208.117.31.137: UDP, length 50
+11:13:35.379904 IP ZPC15.stu.neva.ru > web.rtc.ru: ICMP echo request, id 1, seq 94, length 40
+11:13:35.389524 IP web.rtc.ru > ZPC15.stu.neva.ru: ICMP echo reply, id 1, seq 94, length 40
+11:13:35.505105 IP ZPC15.stu.neva.ru.137 > 195.208.117.31.137: UDP, length 50
+11:13:36.284471 IP ZPC15.stu.neva.ru.137 > 195.208.117.31.137: UDP, length 50
+11:13:36.379718 IP ZPC15.stu.neva.ru > web.rtc.ru: ICMP echo request, id 1, seq 95, length 40
+11:13:36.389375 IP web.rtc.ru > ZPC15.stu.neva.ru: ICMP echo reply, id 1, seq 95, length 40
+11:13:37.034844 IP ZPC15.stu.neva.ru.137 > 195.208.117.31.137: UDP, length 50
+11:13:37.379059 IP ZPC15.stu.neva.ru > web.rtc.ru: ICMP echo request, id 1, seq 96, length 40
+11:13:37.388879 IP web.rtc.ru > ZPC15.stu.neva.ru: ICMP echo reply, id 1, seq 96, length 40
+11:13:37.441429 IP 

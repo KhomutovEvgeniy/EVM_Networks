@@ -1,0 +1,19 @@
+11:12:06.199061 arp who-has gpu4-gw.neva.ru (00:1e:67:9d:bc:aa (oui Unknown)) tell ZPC15.stu.neva.ru
+11:12:06.199296 arp reply gpu4-gw.neva.ru is-at 00:1e:67:9d:bc:aa (oui Unknown)
+11:12:06.463175 IP ZPC15.stu.neva.ru.53662 > lg-in-f94.1e100.net.443: UDP, length 356
+11:12:06.463215 IP ZPC15.stu.neva.ru.53662 > lg-in-f94.1e100.net.443: UDP, length 24
+11:12:06.477260 IP lg-in-f94.1e100.net.443 > ZPC15.stu.neva.ru.53662: UDP, length 41
+11:12:06.481901 IP lg-in-f94.1e100.net.443 > ZPC15.stu.neva.ru.53662: UDP, length 60
+11:12:06.481903 IP lg-in-f94.1e100.net.443 > ZPC15.stu.neva.ru.53662: UDP, length 17
+11:12:06.485685 IP ZPC15.stu.neva.ru.53662 > lg-in-f94.1e100.net.443: UDP, length 41
+11:12:07.427751 IP ZPC15.stu.neva.ru.49934 > telematika.stu.neva.ru.80: F 1447559389:1447559389(0) ack 1371807479 win 256
+11:12:07.427794 IP ZPC15.stu.neva.ru.49935 > telematika.stu.neva.ru.80: F 1486102589:1486102589(0) ack 1378082799 win 256
+11:12:07.427819 IP ZPC15.stu.neva.ru.49936 > telematika.stu.neva.ru.80: F 2419465885:2419465885(0) ack 1379055463 win 256
+11:12:07.427849 IP ZPC15.stu.neva.ru.49933 > telematika.stu.neva.ru.80: F 1395280380:1395280380(0) ack 1371994824 win 255
+11:12:07.428339 IP ZPC15.stu.neva.ru.55148 > ns.stu.neva.ru.53:  21027+ A? mc.yandex.ru. (30)
+11:12:07.428411 IP telematika.stu.neva.ru.80 > ZPC15.stu.neva.ru.49934: F 1:1(0) ack 1 win 69
+11:12:07.428411 IP telematika.stu.neva.ru.80 > ZPC15.stu.neva.ru.49935: F 1:1(0) ack 1 win 69
+11:12:07.428411 IP telematika.stu.neva.ru.80 > ZPC15.stu.neva.ru.49933: R 1371994824:1371994824(0) win 0
+11:12:07.428447 IP ZPC15.stu.neva.ru.49934 > telematika.stu.neva.ru.80: . ack 2 win 256
+11:12:07.428468 IP ZPC15.stu.neva.ru.49935 > telematika.stu.neva.ru.80: . ack 2 win 256
+11:12:07.428524 IP 
