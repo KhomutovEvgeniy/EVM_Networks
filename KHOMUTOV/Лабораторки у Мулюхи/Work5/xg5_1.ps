@@ -1,0 +1,781 @@
+%!
+%%EndComments
+%
+% Xgraph postscript output
+% Rick Spickelmier and David Harrison
+% University of California, Berkeley
+%
+% Scaling information
+%
+% Change these if you would like to change the centering
+% of the plot in either dimension
+/X-CENTER-PLOT 1 def
+/Y-CENTER-PLOT 1 def
+%
+% Page size computation
+clippath pathbbox
+/page-height exch def
+/page-width exch def
+pop pop
+% Determine whether rotation is required
+538.583 page-width gt
+{ % Rotation required
+   90 rotate
+   0 page-width neg translate
+   % Handle centering
+   Y-CENTER-PLOT 1 eq { % Center in y
+      page-height 538.583 sub 2 div
+   } { % Don't center in y
+      0
+   } ifelse
+   X-CENTER-PLOT 1 eq { % Center in x
+      page-width 538.583 sub 2 div
+   } { % Don't center in x
+      0
+   } ifelse
+   translate
+} { % No rotation - just handle centering
+   X-CENTER-PLOT 1 eq { % Center in x
+      page-width 538.583 sub 2 div
+   } { % Don't center in x
+      0
+   } ifelse
+   Y-CENTER-PLOT 1 eq { % Center in y
+      page-height 538.583 sub 2 div
+   } { % Don't center in y
+      0
+   } ifelse
+   translate
+} ifelse
+% Set the scale
+0.06 0.06 scale
+% Font Handling Functions
+%
+% Function giving y-offset to center of font
+% Assumes font is set and uses numbers to gauge center
+%
+/choose-font	% stack: fontsize fontname => ---
+{
+   findfont 
+   exch scalefont 
+   setfont
+   newpath
+   0 0 moveto (0) true charpath flattenpath pathbbox
+   /top exch def pop
+   /bottom exch def pop
+   bottom top bottom top add 2 div
+   /center-font-val exch def 
+   /upper-font-val exch def 
+   /lower-font-val exch def
+} def
+%
+% Justfication offset routines
+%
+/center-x-just	% stack: (string) x y => (string) newx y
+{
+   exch 2 index stringwidth pop 2 div sub exch
+} def
+%
+/left-x-just	% stack: (string) x y => (string) newx y
+{ 
+} def
+%
+/right-x-just	% stack: (string) x y => (string) newx y
+{
+   exch 2 index stringwidth pop sub exch
+} def
+%
+/center-y-just	% stack: (string) x y => (string) x newy
+{
+   center-font-val sub
+} def
+%
+/lower-y-just	% stack: (string) x y => (string) x newy
+{
+   lower-font-val sub
+} def
+%
+/upper-y-just	% stack: (string) x y => (string) x newy
+{
+   upper-font-val sub
+} def
+%
+% Shows a string on the page subject to justification
+%   
+/just-string	% stack: (string) x y just => ---
+{
+   dup 0 eq { pop center-x-just center-y-just 		} if
+   dup 1 eq { pop left-x-just center-y-just		} if
+   dup 2 eq { pop left-x-just upper-y-just	 	} if
+   dup 3 eq { pop center-x-just upper-y-just 		} if
+   dup 4 eq { pop right-x-just upper-y-just	 	} if
+   dup 5 eq { pop right-x-just center-y-just 		} if
+   dup 6 eq { pop right-x-just lower-y-just	 	} if
+   dup 7 eq { pop center-x-just lower-y-just  		} if
+   dup 8 eq { pop left-x-just lower-y-just	 	} if
+   moveto show
+} def
+%
+% Marker definitions
+/mark0 {/size exch def /y exch def /x exch def
+newpath x size sub y size sub moveto
+size size add 0 rlineto 0 size size add rlineto
+0 size size add sub 0 rlineto closepath fill} def
+/mark1 {/size exch def /y exch def /x exch def
+newpath x size sub y size sub moveto
+size size add 0 rlineto 0 size size add rlineto
+0 size size add sub 0 rlineto closepath stroke} def
+/mark2 {/size exch def /y exch def /x exch def
+newpath x y moveto x y size 0 360 arc stroke} def
+/mark3 {/size exch def /y exch def /x exch def
+newpath x size sub y size sub moveto x size add y size add lineto
+x size sub y size add moveto x size add y size sub lineto stroke} def
+/mark4 {/size exch def /y exch def /x exch def
+newpath x size sub y moveto x y size add lineto
+x size add y lineto x y size sub lineto
+closepath stroke} def
+/mark5 {/size exch def /y exch def /x exch def
+x y size mark1
+newpath x size sub y moveto size size add 0 rlineto stroke} def
+/mark6 {/size exch def /y exch def /x exch def
+newpath x y moveto x y size 0 360 arc fill} def
+/mark7 {/size exch def /y exch def /x exch def
+newpath x y moveto x size sub y size sub lineto
+x size add y size sub lineto closepath fill
+newpath x y moveto x size add y size add lineto
+x size sub y size add lineto closepath fill} def
+%
+% Main body begins here
+%
+0 setgray
+300 /Times-Bold choose-font
+(tcp/ftp+telnet) 8527 8856 4 just-string
+200 /Times-Roman choose-font
+(packets) 7876 8104 2 just-string
+(acks) 7876 7812 2 just-string
+(skip-1) 7876 7520 2 just-string
+(drops) 7876 7228 2 just-string
+8 setlinewidth 7876 8136 24 mark0
+0.125 setgray
+7876 7844 24 mark1
+0.25 setgray
+7876 7552 24 mark2
+0.375 setgray
+7876 7260 24 mark3
+0 setgray
+(packet number (mod 80)) 90 8496 2 just-string
+(time (sec)) 8886 380 5 just-string
+(0.0000) 860 731 5 just-string
+(5.0000) 860 1176 5 just-string
+(10.0000) 860 1620 5 just-string
+(15.0000) 860 2065 5 just-string
+(20.0000) 860 2509 5 just-string
+(25.0000) 860 2954 5 just-string
+(30.0000) 860 3398 5 just-string
+(35.0000) 860 3843 5 just-string
+(40.0000) 860 4287 5 just-string
+(45.0000) 860 4732 5 just-string
+(50.0000) 860 5177 5 just-string
+(55.0000) 860 5621 5 just-string
+(60.0000) 860 6066 5 just-string
+(65.0000) 860 6510 5 just-string
+(70.0000) 860 6955 5 just-string
+(75.0000) 860 7399 5 just-string
+(80.0000) 860 7844 5 just-string
+(0.0000) 1261 90 7 just-string
+(1.0000) 2314 90 7 just-string
+(2.0000) 3367 90 7 just-string
+(3.0000) 4420 90 7 just-string
+(4.0000) 5473 90 7 just-string
+(5.0000) 6525 90 7 just-string
+(6.0000) 7578 90 7 just-string
+[] 0 setdash
+8 setlinewidth
+newpath
+  950 731 moveto
+  1100 731 lineto
+stroke
+[] 0 setdash
+8 setlinewidth
+newpath
+  7636 731 moveto
+  7786 731 lineto
+stroke
+[] 0 setdash
+2 setlinewidth
+newpath
+  950 1176 moveto
+  1100 1176 lineto
+stroke
+[] 0 setdash
+2 setlinewidth
+newpath
+  7636 1176 moveto
+  7786 1176 lineto
+stroke
+[] 0 setdash
+2 setlinewidth
+newpath
+  950 1620 moveto
+  1100 1620 lineto
+stroke
+[] 0 setdash
+2 setlinewidth
+newpath
+  7636 1620 moveto
+  7786 1620 lineto
+stroke
+[] 0 setdash
+2 setlinewidth
+newpath
+  950 2065 moveto
+  1100 2065 lineto
+stroke
+[] 0 setdash
+2 setlinewidth
+newpath
+  7636 2065 moveto
+  7786 2065 lineto
+stroke
+[] 0 setdash
+2 setlinewidth
+newpath
+  950 2509 moveto
+  1100 2509 lineto
+stroke
+[] 0 setdash
+2 setlinewidth
+newpath
+  7636 2509 moveto
+  7786 2509 lineto
+stroke
+[] 0 setdash
+2 setlinewidth
+newpath
+  950 2954 moveto
+  1100 2954 lineto
+stroke
+[] 0 setdash
+2 setlinewidth
+newpath
+  7636 2954 moveto
+  7786 2954 lineto
+stroke
+[] 0 setdash
+2 setlinewidth
+newpath
+  950 3398 moveto
+  1100 3398 lineto
+stroke
+[] 0 setdash
+2 setlinewidth
+newpath
+  7636 3398 moveto
+  7786 3398 lineto
+stroke
+[] 0 setdash
+2 setlinewidth
+newpath
+  950 3843 moveto
+  1100 3843 lineto
+stroke
+[] 0 setdash
+2 setlinewidth
+newpath
+  7636 3843 moveto
+  7786 3843 lineto
+stroke
+[] 0 setdash
+2 setlinewidth
+newpath
+  950 4287 moveto
+  1100 4287 lineto
+stroke
+[] 0 setdash
+2 setlinewidth
+newpath
+  7636 4287 moveto
+  7786 4287 lineto
+stroke
+[] 0 setdash
+2 setlinewidth
+newpath
+  950 4732 moveto
+  1100 4732 lineto
+stroke
+[] 0 setdash
+2 setlinewidth
+newpath
+  7636 4732 moveto
+  7786 4732 lineto
+stroke
+[] 0 setdash
+2 setlinewidth
+newpath
+  950 5177 moveto
+  1100 5177 lineto
+stroke
+[] 0 setdash
+2 setlinewidth
+newpath
+  7636 5177 moveto
+  7786 5177 lineto
+stroke
+[] 0 setdash
+2 setlinewidth
+newpath
+  950 5621 moveto
+  1100 5621 lineto
+stroke
+[] 0 setdash
+2 setlinewidth
+newpath
+  7636 5621 moveto
+  7786 5621 lineto
+stroke
+[] 0 setdash
+2 setlinewidth
+newpath
+  950 6066 moveto
+  1100 6066 lineto
+stroke
+[] 0 setdash
+2 setlinewidth
+newpath
+  7636 6066 moveto
+  7786 6066 lineto
+stroke
+[] 0 setdash
+2 setlinewidth
+newpath
+  950 6510 moveto
+  1100 6510 lineto
+stroke
+[] 0 setdash
+2 setlinewidth
+newpath
+  7636 6510 moveto
+  7786 6510 lineto
+stroke
+[] 0 setdash
+2 setlinewidth
+newpath
+  950 6955 moveto
+  1100 6955 lineto
+stroke
+[] 0 setdash
+2 setlinewidth
+newpath
+  7636 6955 moveto
+  7786 6955 lineto
+stroke
+[] 0 setdash
+2 setlinewidth
+newpath
+  950 7399 moveto
+  1100 7399 lineto
+stroke
+[] 0 setdash
+2 setlinewidth
+newpath
+  7636 7399 moveto
+  7786 7399 lineto
+stroke
+[] 0 setdash
+2 setlinewidth
+newpath
+  950 7844 moveto
+  1100 7844 lineto
+stroke
+[] 0 setdash
+2 setlinewidth
+newpath
+  7636 7844 moveto
+  7786 7844 lineto
+stroke
+[] 0 setdash
+8 setlinewidth
+newpath
+  1261 8106 moveto
+  1261 7956 lineto
+stroke
+[] 0 setdash
+8 setlinewidth
+newpath
+  1261 530 moveto
+  1261 380 lineto
+stroke
+[] 0 setdash
+2 setlinewidth
+newpath
+  2314 8106 moveto
+  2314 7956 lineto
+stroke
+[] 0 setdash
+2 setlinewidth
+newpath
+  2314 530 moveto
+  2314 380 lineto
+stroke
+[] 0 setdash
+2 setlinewidth
+newpath
+  3367 8106 moveto
+  3367 7956 lineto
+stroke
+[] 0 setdash
+2 setlinewidth
+newpath
+  3367 530 moveto
+  3367 380 lineto
+stroke
+[] 0 setdash
+2 setlinewidth
+newpath
+  4420 8106 moveto
+  4420 7956 lineto
+stroke
+[] 0 setdash
+2 setlinewidth
+newpath
+  4420 530 moveto
+  4420 380 lineto
+stroke
+[] 0 setdash
+2 setlinewidth
+newpath
+  5473 8106 moveto
+  5473 7956 lineto
+stroke
+[] 0 setdash
+2 setlinewidth
+newpath
+  5473 530 moveto
+  5473 380 lineto
+stroke
+[] 0 setdash
+2 setlinewidth
+newpath
+  6525 8106 moveto
+  6525 7956 lineto
+stroke
+[] 0 setdash
+2 setlinewidth
+newpath
+  6525 530 moveto
+  6525 380 lineto
+stroke
+[] 0 setdash
+2 setlinewidth
+newpath
+  7578 8106 moveto
+  7578 7956 lineto
+stroke
+[] 0 setdash
+2 setlinewidth
+newpath
+  7578 530 moveto
+  7578 380 lineto
+stroke
+[] 0 setdash
+2 setlinewidth
+newpath
+  950 8106 moveto
+  950 380 lineto
+  7786 380 lineto
+  7786 8106 lineto
+  950 8106 lineto
+stroke
+8 setlinewidth 1377 731 24 mark0
+1377 731 24 mark0
+1822 820 24 mark0
+1822 820 24 mark0
+1823 909 24 mark0
+1827 909 24 mark0
+2271 998 24 mark0
+2271 998 24 mark0
+2272 1087 24 mark0
+2276 1176 24 mark0
+2276 1087 24 mark0
+2276 1265 24 mark0
+2280 1176 24 mark0
+2285 1265 24 mark0
+2720 1354 24 mark0
+2720 1354 24 mark0
+2721 1442 24 mark0
+2725 1531 24 mark0
+2725 1442 24 mark0
+2725 1620 24 mark0
+2729 1709 24 mark0
+2729 1531 24 mark0
+2730 1798 24 mark0
+2734 1887 24 mark0
+2734 1620 24 mark0
+2735 1976 24 mark0
+2739 1709 24 mark0
+2743 1798 24 mark0
+2748 1887 24 mark0
+2752 1976 24 mark0
+3169 2065 24 mark0
+3169 2065 24 mark0
+3170 2154 24 mark0
+3174 2243 24 mark0
+3174 2154 24 mark0
+3174 2332 24 mark0
+3178 2420 24 mark0
+3178 2243 24 mark0
+3179 2509 24 mark0
+3183 2598 24 mark0
+3183 2332 24 mark0
+3184 2687 24 mark0
+3188 2776 24 mark0
+3188 2420 24 mark0
+3188 2865 24 mark0
+3192 2954 24 mark0
+3192 2509 24 mark0
+3193 3043 24 mark0
+3197 3132 24 mark0
+3197 2598 24 mark0
+3197 3221 24 mark0
+3201 3309 24 mark0
+3201 2687 24 mark0
+3206 2776 24 mark0
+3211 2865 24 mark0
+3215 2954 24 mark0
+3220 3043 24 mark0
+3224 3132 24 mark0
+3229 3221 24 mark0
+3618 3398 24 mark0
+3618 3398 24 mark0
+3623 3487 24 mark0
+3623 3487 24 mark0
+3627 3576 24 mark0
+3627 3576 24 mark0
+3632 3665 24 mark0
+3632 3665 24 mark0
+3636 3754 24 mark0
+3636 3754 24 mark0
+3641 3843 24 mark0
+3641 3843 24 mark0
+3646 3932 24 mark0
+3646 3932 24 mark0
+3650 4021 24 mark0
+3650 4021 24 mark0
+3655 4110 24 mark0
+3655 4110 24 mark0
+3659 4199 24 mark0
+3659 4199 24 mark0
+3664 4287 24 mark0
+3664 4287 24 mark0
+3669 4376 24 mark0
+3669 4376 24 mark0
+3673 4465 24 mark0
+3673 4465 24 mark0
+3678 4554 24 mark0
+3678 4554 24 mark0
+4067 4643 24 mark0
+4067 4643 24 mark0
+4072 4732 24 mark0
+4072 4732 24 mark0
+4076 3309 24 mark0
+4076 3309 24 mark0
+4525 4821 24 mark0
+4525 4821 24 mark0
+4526 4910 24 mark0
+4530 4910 24 mark0
+4974 4999 24 mark0
+4974 4999 24 mark0
+4975 5088 24 mark0
+4979 5177 24 mark0
+4979 5088 24 mark0
+4979 5265 24 mark0
+4983 5177 24 mark0
+4988 5265 24 mark0
+5423 5354 24 mark0
+5423 5354 24 mark0
+5424 5443 24 mark0
+5428 5532 24 mark0
+5428 5443 24 mark0
+5428 5621 24 mark0
+5432 5710 24 mark0
+5432 5532 24 mark0
+5433 5799 24 mark0
+5437 5888 24 mark0
+5437 5621 24 mark0
+5441 5710 24 mark0
+5446 5799 24 mark0
+5451 5888 24 mark0
+5872 5977 24 mark0
+5872 5977 24 mark0
+5876 6066 24 mark0
+5876 6066 24 mark0
+5881 6154 24 mark0
+5881 6154 24 mark0
+5886 6243 24 mark0
+5886 6243 24 mark0
+5890 6332 24 mark0
+5890 6332 24 mark0
+5895 6421 24 mark0
+5895 6421 24 mark0
+5899 6510 24 mark0
+5899 6510 24 mark0
+5900 6599 24 mark0
+5904 6599 24 mark0
+6321 6688 24 mark0
+6321 6688 24 mark0
+6325 6777 24 mark0
+6325 6777 24 mark0
+6330 6866 24 mark0
+6330 6866 24 mark0
+6335 6955 24 mark0
+6335 6955 24 mark0
+6339 7044 24 mark0
+6339 7044 24 mark0
+6344 7132 24 mark0
+6344 7132 24 mark0
+6348 7221 24 mark0
+6348 7221 24 mark0
+6353 7310 24 mark0
+6353 7310 24 mark0
+6354 7399 24 mark0
+6358 7399 24 mark0
+6770 7488 24 mark0
+6770 7488 24 mark0
+6774 7577 24 mark0
+6774 7577 24 mark0
+6779 7666 24 mark0
+6779 7666 24 mark0
+6784 7755 24 mark0
+6784 7755 24 mark0
+6788 731 24 mark0
+6788 731 24 mark0
+6793 820 24 mark0
+6793 820 24 mark0
+6797 909 24 mark0
+6797 909 24 mark0
+6802 998 24 mark0
+6802 998 24 mark0
+6807 1087 24 mark0
+6807 1087 24 mark0
+7219 1176 24 mark0
+7219 1176 24 mark0
+7219 1265 24 mark0
+7223 1265 24 mark0
+7223 1354 24 mark0
+7228 1354 24 mark0
+7228 1442 24 mark0
+7232 1442 24 mark0
+7232 1531 24 mark0
+7237 1531 24 mark0
+7237 1620 24 mark0
+7242 1620 24 mark0
+7242 1709 24 mark0
+7246 1709 24 mark0
+7246 1798 24 mark0
+7251 1798 24 mark0
+7251 1887 24 mark0
+7255 1887 24 mark0
+7255 1976 24 mark0
+7260 1976 24 mark0
+0.125 setgray
+1589 731 24 mark1
+2038 820 24 mark1
+2042 909 24 mark1
+2486 998 24 mark1
+2491 1087 24 mark1
+2496 1176 24 mark1
+2500 1265 24 mark1
+2935 1354 24 mark1
+2940 1442 24 mark1
+2945 1531 24 mark1
+2949 1620 24 mark1
+2954 1709 24 mark1
+2958 1798 24 mark1
+2963 1887 24 mark1
+2968 1976 24 mark1
+3384 2065 24 mark1
+3389 2154 24 mark1
+3394 2243 24 mark1
+3398 2332 24 mark1
+3403 2420 24 mark1
+3407 2509 24 mark1
+3412 2598 24 mark1
+3417 2687 24 mark1
+3421 2776 24 mark1
+3426 2865 24 mark1
+3430 2954 24 mark1
+3435 3043 24 mark1
+3440 3132 24 mark1
+3444 3221 24 mark1
+3833 3221 24 mark1
+3838 3221 24 mark1
+3842 3221 24 mark1
+3847 3221 24 mark1
+3852 3221 24 mark1
+3856 3221 24 mark1
+3861 3221 24 mark1
+3865 3221 24 mark1
+3870 3221 24 mark1
+3875 3221 24 mark1
+3879 3221 24 mark1
+3884 3221 24 mark1
+3889 3221 24 mark1
+3893 3221 24 mark1
+4282 3221 24 mark1
+4287 3221 24 mark1
+4291 4732 24 mark1
+4740 4821 24 mark1
+4745 4910 24 mark1
+5189 4999 24 mark1
+5194 5088 24 mark1
+5198 5177 24 mark1
+5203 5265 24 mark1
+5638 5354 24 mark1
+5643 5443 24 mark1
+5647 5532 24 mark1
+5652 5621 24 mark1
+5657 5710 24 mark1
+5661 5799 24 mark1
+5666 5888 24 mark1
+6087 5977 24 mark1
+6092 6066 24 mark1
+6096 6154 24 mark1
+6101 6243 24 mark1
+6105 6332 24 mark1
+6110 6421 24 mark1
+6115 6510 24 mark1
+6119 6599 24 mark1
+6536 6688 24 mark1
+6541 6777 24 mark1
+6545 6866 24 mark1
+6550 6955 24 mark1
+6554 7044 24 mark1
+6559 7132 24 mark1
+6564 7221 24 mark1
+6568 7310 24 mark1
+6573 7399 24 mark1
+6985 7488 24 mark1
+6989 7577 24 mark1
+6994 7666 24 mark1
+6999 7755 24 mark1
+7003 731 24 mark1
+7008 820 24 mark1
+7013 909 24 mark1
+7017 998 24 mark1
+7022 1087 24 mark1
+7434 1176 24 mark1
+7438 1265 24 mark1
+7443 1354 24 mark1
+7448 1442 24 mark1
+7452 1531 24 mark1
+7457 1620 24 mark1
+7461 1709 24 mark1
+7466 1798 24 mark1
+7471 1887 24 mark1
+7475 1976 24 mark1
+0.25 setgray
+1528 8976 24 mark2
+0.375 setgray
+1528 8976 24 mark3
+showpage
+% End of xgraph output
